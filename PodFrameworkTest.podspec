@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
   s.default_subspec = 'core'
   s.frameworks = 'UIKit', 'Foundation', 'SystemConfiguration', 'CoreTelephony', 'CoreGraphics', 'QuartzCore'
   s.libraries = 'icucore', 'sqlite3', 'z'
-  #s.vendored_frameworks = 'SensorsdataAnalytics.framework'
+  s.vendored_frameworks = 'SensorsAnalyticsSDK/SensorsdataAnalytics.framework'
+
   s.ios.deployment_target = '8.0' 
   s.requires_arc = true 
   s.subspec 'core' do |c|

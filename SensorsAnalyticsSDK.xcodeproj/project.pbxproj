@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		A1CE09A81F9E16AD00344A90 /* SAFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A1CE09AB1F9E16AD00344A90 /* Build configuration list for PBXAggregateTarget "SAFramework" */;
+			buildPhases = (
+				A1CE09AE1F9E16CC00344A90 /* ShellScript */,
+			);
+			dependencies = (
+				A1CE09AD1F9E16B800344A90 /* PBXTargetDependency */,
+			);
+			name = SAFramework;
+			productName = SensorsdataAnalytics;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		002130681F6A5B1A000851B6 /* SAHeatMapConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 002130661F6A5B1A000851B6 /* SAHeatMapConnection.h */; };
 		002130691F6A5B1A000851B6 /* SAHeapMapConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 002130671F6A5B1A000851B6 /* SAHeapMapConnection.m */; };
@@ -269,6 +284,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A1CE09AC1F9E16B800344A90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D5CA76F1B43E92D00D7ACB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1E9C8C21F9D9AE40029DDC5;
+			remoteInfo = Sensorsdata;
+		};
 		A1E9C8C81F9D9AE40029DDC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4D5CA76F1B43E92D00D7ACB7 /* Project object */;
@@ -826,6 +848,11 @@
 					4D5CA7761B43E92D00D7ACB7 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
+					A1CE09A81F9E16AD00344A90 = {
+						CreatedOnToolsVersion = 9.0.1;
+						DevelopmentTeam = VBGTEN3BX8;
+						ProvisioningStyle = Automatic;
+					};
 					A1E9C8C21F9D9AE40029DDC5 = {
 						CreatedOnToolsVersion = 9.0.1;
 						DevelopmentTeam = VBGTEN3BX8;
@@ -849,6 +876,7 @@
 				4D5CA7761B43E92D00D7ACB7 /* SensorsAnalyticsSDK */,
 				4D0EB7BD1B47A88C0019FD21 /* HelloSensorsAnalytics */,
 				A1E9C8C21F9D9AE40029DDC5 /* Sensorsdata */,
+				A1CE09A81F9E16AD00344A90 /* SAFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -875,6 +903,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A1CE09AE1F9E16CC00344A90 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Constants\nSELECTED_TARGET_NAME=${PROJECT_NAME}\n#自定义的用来存放最后合并的framework\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nIPHONE_DEVICE_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos\nIPHONE_SIMULATOR_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\n\nREDEFINE_TARGET_NAME=\"Sensorsdata\"\n\n#WORKSPACE_NAME=${PROJECT_NAME}.xcworkspace\n#clean build是先清除原来的build\n#xcodebuild -workspace ${WORKSPACE_NAME} -scheme ${YO_SCHEME} -sdk iphonesimulator -configuration\"${CONFIGURATION}\"clean build\n#xcodebuild -workspace ${WORKSPACE_NAME} -scheme ${YO_SCHEME} -sdk iphoneos -configuration\"${CONFIGURATION}\"clean build\n# build project\n#xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}/arm64\" SYMROOT=\"${SYMROOT}\" ARCHS='arm64' VALID_ARCHS='arm64' $ACTION\n\nYO_SCHEME=${PROJECT_NAME}\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}\" SYMROOT=\"${SYMROOT}\" ARCHS='armv7 armv7s arm64'  VALID_ARCHS='armv7 armv7s arm64' $ACTION\n\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${IPHONE_SIMULATOR_BUILD_DIR}\" SYMROOT=\"${SYMROOT}\" ARCHS='x86_64'  VALID_ARCHS='x86_64' $ACTION\n\n# Copy the framework structure to the universal folder (clean it first)\n#因为framework的合并,lipo只是合并了最后的二进制可执行文件,所以其它的需要我们自己复制过来\n#先移除原来的\nrm -rf \"${UNIVERSAL_OUTPUTFOLDER}\"\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${REDEFINE_TARGET_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/${REDEFINE_TARGET_NAME}.framework\"\n#合并模拟器和真机的架构\nlipo -create  \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\" -output \"${UNIVERSAL_OUTPUTFOLDER}/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\"\nopen \"${UNIVERSAL_OUTPUTFOLDER}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D0EB7BA1B47A88C0019FD21 /* Sources */ = {
@@ -1054,6 +1098,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A1CE09AD1F9E16B800344A90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1E9C8C21F9D9AE40029DDC5 /* Sensorsdata */;
+			targetProxy = A1CE09AC1F9E16B800344A90 /* PBXContainerItemProxy */;
+		};
 		A1E9C8C91F9D9AE40029DDC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A1E9C8C21F9D9AE40029DDC5 /* Sensorsdata */;
@@ -1237,6 +1286,24 @@
 			};
 			name = Release;
 		};
+		A1CE09A91F9E16AD00344A90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VBGTEN3BX8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A1CE09AA1F9E16AD00344A90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VBGTEN3BX8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A1E9C8CC1F9D9AE40029DDC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1342,6 +1409,15 @@
 			buildConfigurations = (
 				4D5CA78C1B43E92D00D7ACB7 /* Debug */,
 				4D5CA78D1B43E92D00D7ACB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1CE09AB1F9E16AD00344A90 /* Build configuration list for PBXAggregateTarget "SAFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1CE09A91F9E16AD00344A90 /* Debug */,
+				A1CE09AA1F9E16AD00344A90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

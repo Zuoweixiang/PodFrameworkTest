@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true 
   s.subspec 'core' do |c|
 	c.source_files  = "SensorsAnalyticsSDK", "SensorsAnalyticsSDK/*.{h,m}"
-	c.public_header_files = "SensorsAnalyticsSDK.h"
+	c.public_header_files = "SensorsAnalyticsSDK/SensorsAnalyticsSDK.h"
    end
   end

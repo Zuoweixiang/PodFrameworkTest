@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
-  s.name         = "SensorsAnalyticsSDK"
-  s.version      = "1.8.3"
+  s.name         = "SensorsAnalyticsSDKFramework"
+  s.version      = "0.0.1"
   s.summary      = "The offical iOS SDK of Sensors Analytics."
   s.homepage     = "http://www.sensorsdata.cn"
-  s.source       = { :git => 'https://github.com/sensorsdata/sa-sdk-ios.git', :tag => "v#{s.version}" } 
+  s.source       = { :git => 'https://github.com/Zuoweixiang/PodFrameworkTest.git', :tag => "v#{s.version}" } 
   s.license = { :type => "Apache License, Version 2.0" }
   s.author = { "Yuhan ZOU" => "zouyuhan@sensorsdata.cn" }
   s.platform = :ios, "7.0"

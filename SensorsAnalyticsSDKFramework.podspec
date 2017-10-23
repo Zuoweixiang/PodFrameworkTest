@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "0.0.2"
   s.summary      = "The offical iOS SDK of Sensors Analytics."
   s.homepage     = "http://www.sensorsdata.cn"
-  s.source       = { :git => 'https://github.com/Zuoweixiang/PodFrameworkTest.git', :tag => "{s.version}" } 
+  s.source       = { :git => 'https://github.com/Zuoweixiang/PodFrameworkTest.git', :tag => "0.0.2" } 
   s.license = { :type => "Apache License, Version 2.0" }
   s.author = { "Zuoweixiang" => "xiangzuowei@sensorsdata.cn" }
   s.platform = :ios, "7.0"
@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'SensorsdataAnalytics.framework'
 
   s.subspec 'core' do |c|
-	c.source_files  = "SensorsAnalyticsSDK/SensorsAnalyticsSDK", "SensorsAnalyticsSDK/SensorsAnalyticsSDK/*.{h,m}"
-	c.public_header_files = "SensorsAnalyticsSDK/SensorsAnalyticsSDK/SensorsAnalyticsSDK.h"
+	c.source_files  = "PodFrameworkTest/SensorsAnalyticsSDK", "PodFrameworkTest/SensorsAnalyticsSDK/*.{h,m}"
+	c.public_header_files = "PodFrameworkTest/SensorsAnalyticsSDK/SensorsAnalyticsSDK.h"
   end
 
   end

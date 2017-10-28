@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>SASDKResources.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>SensorsAnalyticsSDK.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -38,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>A1CE09A81F9E16AD00344A90</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A1E231981FA327CC009857A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

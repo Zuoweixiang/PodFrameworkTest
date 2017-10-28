@@ -106,6 +106,8 @@
 		4DBA6FA01B4B8DC4004F0ADB /* NSData+SABase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D14F1801B4A7B15006AD786 /* NSData+SABase64.m */; };
 		4DBA6FA31B4B9B9C004F0ADB /* MessageQueueBySqlite.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DBA6FA11B4B9B9C004F0ADB /* MessageQueueBySqlite.h */; };
 		4DBA6FA41B4B9B9C004F0ADB /* MessageQueueBySqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBA6FA21B4B9B9C004F0ADB /* MessageQueueBySqlite.m */; };
+		A1E2319F1FA32803009857A6 /* snapshot_request_ios.json in Resources */ = {isa = PBXBuildFile; fileRef = 002F1EB21F6CC4970032C0DC /* snapshot_request_ios.json */; };
+		A1E231A01FA32803009857A6 /* snapshot_payload.json in Resources */ = {isa = PBXBuildFile; fileRef = A39898A01C33FB330046B1F4 /* snapshot_payload.json */; };
 		A1E9C8CA1F9D9AE40029DDC5 /* Sensorsdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E9C8C31F9D9AE40029DDC5 /* Sensorsdata.framework */; };
 		A1E9C8CB1F9D9AE40029DDC5 /* Sensorsdata.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1E9C8C31F9D9AE40029DDC5 /* Sensorsdata.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1E9C8D01F9D9B3D0029DDC5 /* SAAbstractHeatMapMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F1EB41F6CE74F0032C0DC /* SAAbstractHeatMapMessage.m */; };
@@ -390,6 +392,8 @@
 		4DBA6FA11B4B9B9C004F0ADB /* MessageQueueBySqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageQueueBySqlite.h; sourceTree = "<group>"; };
 		4DBA6FA21B4B9B9C004F0ADB /* MessageQueueBySqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageQueueBySqlite.m; sourceTree = "<group>"; };
 		99C2DE03E0C876AF8032C99C /* libPods-HelloSensorsAnalytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HelloSensorsAnalytics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1E231991FA327CC009857A6 /* SASDKResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SASDKResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1E2319B1FA327CC009857A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1E9C8C31F9D9AE40029DDC5 /* Sensorsdata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sensorsdata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E9C8C61F9D9AE40029DDC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3333BD31C5A0DDE0013353F /* SADesignerDisconnectMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SADesignerDisconnectMessage.h; sourceTree = "<group>"; };
@@ -474,6 +478,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1E231961FA327CC009857A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1E9C8BF1F9D9AE40029DDC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -532,6 +543,7 @@
 				4D5CA7791B43E92D00D7ACB7 /* SensorsAnalyticsSDK */,
 				4D0EB7BF1B47A88C0019FD21 /* HelloSensorsAnalytics */,
 				A1E9C8C41F9D9AE40029DDC5 /* Sensorsdata */,
+				A1E2319A1FA327CC009857A6 /* SASDKResources */,
 				4D5CA7781B43E92D00D7ACB7 /* Products */,
 				F029B80BAB18852D4CE30358 /* Frameworks */,
 			);
@@ -543,6 +555,7 @@
 				4D5CA7771B43E92D00D7ACB7 /* libSensorsAnalyticsSDK.a */,
 				4D0EB7BE1B47A88C0019FD21 /* HelloSensorsAnalytics.app */,
 				A1E9C8C31F9D9AE40029DDC5 /* Sensorsdata.framework */,
+				A1E231991FA327CC009857A6 /* SASDKResources.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -644,6 +657,14 @@
 				008D82AD1F0E22ED00052CFF /* NSString+HashCode.m */,
 			);
 			path = SensorsAnalyticsSDK;
+			sourceTree = "<group>";
+		};
+		A1E2319A1FA327CC009857A6 /* SASDKResources */ = {
+			isa = PBXGroup;
+			children = (
+				A1E2319B1FA327CC009857A6 /* Info.plist */,
+			);
+			path = SASDKResources;
 			sourceTree = "<group>";
 		};
 		A1E9C8C41F9D9AE40029DDC5 /* Sensorsdata */ = {
@@ -813,6 +834,23 @@
 			productReference = 4D5CA7771B43E92D00D7ACB7 /* libSensorsAnalyticsSDK.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		A1E231981FA327CC009857A6 /* SASDKResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1E2319E1FA327CC009857A6 /* Build configuration list for PBXNativeTarget "SASDKResources" */;
+			buildPhases = (
+				A1E231951FA327CC009857A6 /* Sources */,
+				A1E231961FA327CC009857A6 /* Frameworks */,
+				A1E231971FA327CC009857A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SASDKResources;
+			productName = SASDKResources;
+			productReference = A1E231991FA327CC009857A6 /* SASDKResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		A1E9C8C21F9D9AE40029DDC5 /* Sensorsdata */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1E9C8CE1F9D9AE40029DDC5 /* Build configuration list for PBXNativeTarget "Sensorsdata" */;
@@ -853,6 +891,11 @@
 						DevelopmentTeam = VBGTEN3BX8;
 						ProvisioningStyle = Automatic;
 					};
+					A1E231981FA327CC009857A6 = {
+						CreatedOnToolsVersion = 9.0.1;
+						DevelopmentTeam = VBGTEN3BX8;
+						ProvisioningStyle = Automatic;
+					};
 					A1E9C8C21F9D9AE40029DDC5 = {
 						CreatedOnToolsVersion = 9.0.1;
 						DevelopmentTeam = VBGTEN3BX8;
@@ -877,6 +920,7 @@
 				4D0EB7BD1B47A88C0019FD21 /* HelloSensorsAnalytics */,
 				A1E9C8C21F9D9AE40029DDC5 /* Sensorsdata */,
 				A1CE09A81F9E16AD00344A90 /* SAFramework */,
+				A1E231981FA327CC009857A6 /* SASDKResources */,
 			);
 		};
 /* End PBXProject section */
@@ -892,6 +936,15 @@
 				4D0EB7D11B47A88C0019FD21 /* LaunchScreen.xib in Resources */,
 				4D0EB7CE1B47A88C0019FD21 /* Images.xcassets in Resources */,
 				00DC9CDC1D7E9E3F00C7DF6C /* JSCallOC.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1E231971FA327CC009857A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E2319F1FA32803009857A6 /* snapshot_request_ios.json in Resources */,
+				A1E231A01FA32803009857A6 /* snapshot_payload.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,7 +969,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Constants\nSELECTED_TARGET_NAME=${PROJECT_NAME}\n#自定义的用来存放最后合并的framework\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nIPHONE_DEVICE_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos\nIPHONE_SIMULATOR_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\n\nREDEFINE_TARGET_NAME=\"Sensorsdata\"\n\n#WORKSPACE_NAME=${PROJECT_NAME}.xcworkspace\n#clean build是先清除原来的build\n#xcodebuild -workspace ${WORKSPACE_NAME} -scheme ${YO_SCHEME} -sdk iphonesimulator -configuration\"${CONFIGURATION}\"clean build\n#xcodebuild -workspace ${WORKSPACE_NAME} -scheme ${YO_SCHEME} -sdk iphoneos -configuration\"${CONFIGURATION}\"clean build\n# build project\n#xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}/arm64\" SYMROOT=\"${SYMROOT}\" ARCHS='arm64' VALID_ARCHS='arm64' $ACTION\n\nYO_SCHEME=${PROJECT_NAME}\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}\" SYMROOT=\"${SYMROOT}\" ARCHS='armv7 armv7s arm64'  VALID_ARCHS='armv7 armv7s arm64' $ACTION\n\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${IPHONE_SIMULATOR_BUILD_DIR}\" SYMROOT=\"${SYMROOT}\" ARCHS='x86_64'  VALID_ARCHS='x86_64' $ACTION\n\n# Copy the framework structure to the universal folder (clean it first)\n#因为framework的合并,lipo只是合并了最后的二进制可执行文件,所以其它的需要我们自己复制过来\n#先移除原来的\nrm -rf \"${UNIVERSAL_OUTPUTFOLDER}\"\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${REDEFINE_TARGET_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/${REDEFINE_TARGET_NAME}.framework\"\n#合并模拟器和真机的架构\nlipo -create  \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\" -output \"${UNIVERSAL_OUTPUTFOLDER}/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\"\nopen \"${UNIVERSAL_OUTPUTFOLDER}\"";
+			shellScript = "# Constants\nSELECTED_TARGET_NAME=${PROJECT_NAME}\n#自定义的用来存放最后合并的framework\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nIPHONE_DEVICE_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos\nIPHONE_SIMULATOR_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\n\nBUNDLE_RESOURCES_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}\n\nREDEFINE_TARGET_NAME=\"Sensorsdata\"\nSASDK_RESOURCES_TARGET_NAME=\"SASDKResources\"\n#WORKSPACE_NAME=${PROJECT_NAME}.xcworkspace\n#clean build是先清除原来的build\n#xcodebuild -workspace ${WORKSPACE_NAME} -scheme ${YO_SCHEME} -sdk iphonesimulator -configuration\"${CONFIGURATION}\"clean build\n#xcodebuild -workspace ${WORKSPACE_NAME} -scheme ${YO_SCHEME} -sdk iphoneos -configuration\"${CONFIGURATION}\"clean build\n# build project\n#xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}/arm64\" SYMROOT=\"${SYMROOT}\" ARCHS='arm64' VALID_ARCHS='arm64' $ACTION\n\nYO_SCHEME=${PROJECT_NAME}\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}\" SYMROOT=\"${SYMROOT}\" ARCHS='armv7 armv7s arm64'  VALID_ARCHS='armv7 armv7s arm64' $ACTION\n\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${REDEFINE_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${IPHONE_SIMULATOR_BUILD_DIR}\" SYMROOT=\"${SYMROOT}\" ARCHS='x86_64'  VALID_ARCHS='x86_64' $ACTION\n\n\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${SASDK_RESOURCES_TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${BUNDLE_RESOURCES_BUILD_DIR}\" SYMROOT=\"${SYMROOT}\" ARCHS='armv7 armv7s arm64'  VALID_ARCHS='armv7 armv7s arm64' $ACTION\n\n\n\n# Copy the framework structure to the universal folder (clean it first)\n#因为framework的合并,lipo只是合并了最后的二进制可执行文件,所以其它的需要我们自己复制过来\n#先移除原来的\nrm -rf \"${UNIVERSAL_OUTPUTFOLDER}\"\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${REDEFINE_TARGET_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/${REDEFINE_TARGET_NAME}.framework\"\n#合并模拟器和真机的架构\nlipo -create  \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\" -output \"${UNIVERSAL_OUTPUTFOLDER}/${REDEFINE_TARGET_NAME}.framework/${REDEFINE_TARGET_NAME}\"\nopen \"${UNIVERSAL_OUTPUTFOLDER}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1042,6 +1095,13 @@
 				A3997A341C3AC3B8005A9374 /* SAUIControlBinding.m in Sources */,
 				4D5CA77D1B43E92D00D7ACB7 /* SensorsAnalyticsSDK.m in Sources */,
 				002DB9501EB1647F00A9632C /* UIApplication+AutoTrack.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1E231951FA327CC009857A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1304,6 +1364,71 @@
 			};
 			name = Release;
 		};
+		A1E2319C1FA327CC009857A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = VBGTEN3BX8;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SASDKResources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sensorsdata.SASDKResources;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A1E2319D1FA327CC009857A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VBGTEN3BX8;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SASDKResources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sensorsdata.SASDKResources;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		A1E9C8CC1F9D9AE40029DDC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1418,6 +1543,15 @@
 			buildConfigurations = (
 				A1CE09A91F9E16AD00344A90 /* Debug */,
 				A1CE09AA1F9E16AD00344A90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1E2319E1FA327CC009857A6 /* Build configuration list for PBXNativeTarget "SASDKResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1E2319C1FA327CC009857A6 /* Debug */,
+				A1E2319D1FA327CC009857A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

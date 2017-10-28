@@ -13,7 +13,7 @@
 @interface AppDelegate ()
 
 @end
-
+#import "NSString+HashCode.h"
 @implementation AppDelegate
 
 
@@ -35,7 +35,8 @@
     [[SensorsAnalyticsSDK sharedInstance] setFlushNetworkPolicy:SensorsAnalyticsNetworkTypeWIFI];
 
     [[SensorsAnalyticsSDK sharedInstance] addWebViewUserAgentSensorsDataFlag];
-
+    NSString *string = @"H4sIAAAAAAAAE5VRwUrDQBD9l7HHtCRNsmlya2sLgqCg6EEkrMnUDKa7YbNpkdIf8Bf8AL14F8S/UfwNd1PBKhR0T8ubN2/evLlYgaY5QuKF7iCOB6HrsjB0INWKZzcp5abCBm7kAC5QaEigM6yqM8LlSaYQBRjqrGzqIv0hw1g/dn0Hcqo1iUy3QhCZ0v5oFHXH/ijsBhO2342nzOtOhqzPpoHrT/yREayUrFBpwhqSFXRyXFCG/1LoyDpdoKpJCtPkeT3XghlXilAZ5O356f3+9ePh5f3ucUM3IB2d2D/V6YxUrdOc30KiVYMGrNtl0wLpujAhRD77BpeU6wKSwAsMNpc5llbsuJACI8ezkgL1UqqbVN9WJiI4P5geWLikq++xvKq2LEc9d+N5zkUz45luVGvcZF+ixZc0o9/uBLcXgLNTwzrkjciKYT6WQitZlqZ7M3E7l96gF8HagS9f7ckNrfW12rBz1JzK3ap77dul/cclbescdSHtiTOTIKzXl5/IoKXJmgIAAA==";
+    int hash =  [string sensorsdata_hashCode];
     return YES;
 }
 

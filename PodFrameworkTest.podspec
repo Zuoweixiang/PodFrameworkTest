@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0' 
   s.requires_arc = true 
+  s.resources = ["SensorsAnalyticsSDK/*.json"]
   s.subspec 'core' do |c|
 	c.source_files  = "SensorsAnalyticsSDK", "SensorsAnalyticsSDK/*.{h,m}"
 	c.public_header_files = "SensorsAnalyticsSDK/SensorsAnalyticsSDK.h"

@@ -80,6 +80,7 @@
         }
         
         // ViewType 被忽略
+#if (defined SENSORS_ANALYTICS_ENABLE_NO_PUBLICK_APIS)
         if ([from isKindOfClass:[NSClassFromString(@"UITabBarButton") class]]) {
             if ([[SensorsAnalyticsSDK sharedInstance] isViewTypeIgnored:[UITabBar class]]) {
                 return;
@@ -88,7 +89,9 @@
             if ([[SensorsAnalyticsSDK sharedInstance] isViewTypeIgnored:[UIBarButtonItem class]]) {
                 return;
             }
-        } else if ([to isKindOfClass:[UISearchBar class]]) {
+        } else
+#endif
+        if ([to isKindOfClass:[UISearchBar class]]) {
             if ([[SensorsAnalyticsSDK sharedInstance] isViewTypeIgnored:[UISearchBar class]]) {
                 return;
             }
@@ -102,10 +105,18 @@
          此处不处理 UITabBar，放到 UITabBar+AutoTrack.h 中处理
          */
         if (from != nil) {
-            if ([from isKindOfClass:[UIBarButtonItem class]] ||
-                [from isKindOfClass:[NSClassFromString(@"UITabBarButton") class]]) {
+            if ([from isKindOfClass:[UIBarButtonItem class]]) {
                 return;
             }
+#if (defined SENSORS_ANALYTICS_ENABLE_NO_PUBLICK_APIS)
+            if ([from isKindOfClass:[NSClassFromString(@"UITabBarButton") class]]) {
+                return;
+            }
+#else
+            if ([to isKindOfClass:[UITabBar class]]) {
+                return;
+            }
+#endif
         }
         
         if (([event isKindOfClass:[UIEvent class]] && event.type==UIEventTypeTouches) ||
@@ -222,7 +233,7 @@
                     return;
                 }
                 
-                [properties setValue:[NSString stringWithFormat: @"%ld", [segmented selectedSegmentIndex]] forKey:@"$element_position"];
+                [properties setValue:[NSString stringWithFormat: @"%ld", (long)[segmented selectedSegmentIndex]] forKey:@"$element_position"];
                 [properties setValue:[segmented titleForSegmentAtIndex:[segmented selectedSegmentIndex]] forKey:@"$element_content"];
                 
                 [AutoTrackUtils sa_addViewPathProperties:properties withObject:segmented withViewController:viewController];
@@ -239,6 +250,7 @@
             
             //只统计触摸结束时
             if ([event isKindOfClass:[UIEvent class]] && [[[event allTouches] anyObject] phase] == UITouchPhaseEnded) {
+#if (defined SENSORS_ANALYTICS_ENABLE_NO_PUBLICK_APIS)
                 if ([from isKindOfClass:[NSClassFromString(@"UINavigationButton") class]]) {
                     UIButton *button = (UIButton *)from;
                     [properties setValue:@"UIBarButtonItem" forKey:@"$element_type"];
@@ -258,7 +270,9 @@
 #endif
                         }
                     }
-                } else if ([from isKindOfClass:[UIButton class]]) {//UIButton
+                } else
+#endif
+                if ([from isKindOfClass:[UIButton class]]) {//UIButton
                     UIButton *button = (UIButton *)from;
                     [properties setValue:@"UIButton" forKey:@"$element_type"];
                     if (button != nil) {
@@ -285,7 +299,9 @@
                             }
                         }
                     }
-                } else if ([from isKindOfClass:[NSClassFromString(@"UITabBarButton") class]]) {//UITabBarButton
+                }
+#if (defined SENSORS_ANALYTICS_ENABLE_NO_PUBLICK_APIS)
+                else if ([from isKindOfClass:[NSClassFromString(@"UITabBarButton") class]]) {//UITabBarButton
                     if ([to isKindOfClass:[UITabBar class]]) {//UITabBar
                         UITabBar *tabBar = (UITabBar *)to;
                         if (tabBar != nil) {
@@ -294,7 +310,9 @@
                             [properties setValue:item.title forKey:@"$element_content"];
                         }
                     }
-                } else if([from isKindOfClass:[UITabBarItem class]]){//For iOS7 TabBar
+                }
+#endif
+                else if([from isKindOfClass:[UITabBarItem class]]){//For iOS7 TabBar
                     UITabBarItem *tabBarItem = (UITabBarItem *)from;
                     if (tabBarItem) {
                         [properties setValue:@"UITabbar" forKey:@"$element_type"];

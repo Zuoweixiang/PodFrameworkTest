@@ -79,17 +79,14 @@
             return;
         }
         NSString *jsonString = [[NSString alloc] initWithData:[message JSONData:_useGzip withFeatuerCode:_featureCode] encoding:NSUTF8StringEncoding];
-        NSLog(@"******sendMessage:%@", jsonString);
         void (^block)(NSData*, NSURLResponse*, NSError*) = ^(NSData *data, NSURLResponse *response, NSError *error) {
             NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse*)response;
             
             NSString *urlResponseContent = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"*******:statusCode=%ld",[urlResponse statusCode]);
             if ([urlResponse statusCode] == 200) {
                 NSData *jsonData = [urlResponseContent dataUsingEncoding:NSUTF8StringEncoding];
                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
                 int delay = [[dict objectForKey:@"delay"] intValue];
-                NSLog(@"*******:delay=%d",delay);
                 if (delay < 0) {
                     [self close];
                 }
@@ -151,6 +148,12 @@
     _featureCode = featureCode;
     _postUrl =  (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,(__bridge CFStringRef)postUrl, CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
     _designerMessage = [self designerMessageForMessage:message];
+
+    if (timer) {
+        [timer invalidate];
+        timer = nil;
+    }
+
     timer = [NSTimer scheduledTimerWithTimeInterval:1
                                      target:self
                                    selector:@selector(handleMessage)
@@ -167,16 +170,20 @@
     }
 }
 
-- (void)showOpenHeatMapDialog:(NSString *)featureCode withUrl:(NSString *)postUrl {
-    NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"snapshot_request_ios.json"];
-    NSError* err=nil;
-    NSString* message=[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&err];
+- (void)showOpenHeatMapDialog:(NSString *)featureCode withUrl:(NSString *)postUrl isWifi:(BOOL)isWifi {
+//    NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"snapshot_request_ios.json"];
+//    NSError *err=nil;
+//    NSString *message=[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&err];
+    NSString *message = @"{\"type\":\"snapshot_request\", \"payload\":{\"config\":{\"enums\":[{\"name\":\"UIControlState\", \"flag_set\":true, \"base_type\":\"NSUInteger\", \"values\":[{\"value\":0, \"display_name\":\"Normal\"}, {\"value\":1, \"display_name\":\"Highlighted\"}, {\"value\":2, \"display_name\":\"Disabled\"}, {\"value\":4, \"display_name\":\"Selected\"} ] }, {\"name\":\"UIControlEvents\", \"base_type\":\"NSUInteger\", \"flag_set\":true, \"values\":[{\"value\":1, \"display_name\":\"TouchDown\"}, {\"value\":2, \"display_name\":\"TouchDownRepeat\"}, {\"value\":4, \"display_name\":\"TouchDragInside\"}, {\"value\":8, \"display_name\":\"TouchDragOutside\"}, {\"value\":16, \"display_name\":\"TouchDragEnter\"}, {\"value\":32, \"display_name\":\"TouchDragExit\"}, {\"value\":64, \"display_name\":\"TouchUpInside\"}, {\"value\":128, \"display_name\":\"TouchUpOutside\"}, {\"value\":256, \"display_name\":\"TouchCancel\"}, {\"value\":4096, \"display_name\":\"ValueChanged\"}, {\"value\":65536, \"display_name\":\"EditingDidBegin\"}, {\"value\":131072, \"display_name\":\"EditingChanged\"}, {\"value\":262144, \"display_name\":\"EditingDidEnd\"}, {\"value\":524288, \"display_name\":\"EditingDidEndOnExit\"}, {\"value\":4095, \"display_name\":\"AllTouchEvents\"}, {\"value\":983040, \"display_name\":\"AllEditingEvents\"}, {\"value\":251658240, \"display_name\":\"ApplicationReserved\"}, {\"value\":4026531840, \"display_name\":\"SystemReserved\"}, {\"value\":4294967295, \"display_name\":\"AllEvents\"} ] } ], \"classes\":[{\"name\":\"NSObject\", \"superclass\":null, \"properties\":[] }, {\"name\":\"UIResponder\", \"superclass\":\"NSObject\", \"properties\":[] }, {\"name\":\"UIScreen\", \"superclass\":\"NSObject\", \"properties\":[{\"name\":\"bounds\", \"type\":\"CGRect\", \"readonly\":true }, {\"name\":\"applicationFrame\", \"type\":\"CGRect\", \"readonly\":true } ] }, {\"name\":\"UIStoryboardSegueTemplate\", \"superclass\":\"NSObject\", \"properties\":[{\"name\":\"identifier\", \"type\":\"NSString\", \"readonly\":true }, {\"name\":\"viewController\", \"type\":\"UIViewController\"}, {\"name\":\"performOnViewLoad\", \"type\":\"BOOL\"} ] }, {\"name\":\"UINavigationItem\", \"superclass\":\"NSObject\", \"properties\":[] }, {\"name\":\"UIBarItem\", \"superclass\":\"NSObject\", \"properties\":[] }, {\"name\":\"UIBarButtonItem\", \"superclass\":\"UIBarItem\", \"properties\":[] }, {\"name\":\"UIGestureRecognizer\", \"superclass\":\"NSObject\", \"properties\":[] }, {\"name\":\"UIGestureRecognizerTarget\", \"superclass\":\"NSObject\", \"properties\":[] }, {\"name\":\"UIView\", \"superclass\":\"UIResponder\", \"properties\":[{\"name\":\"userInteractionEnabled\", \"type\":\"BOOL\"}, {\"name\":\"frame\", \"type\":\"CGRect\"}, {\"name\":\"bounds\", \"type\":\"CGRect\"}, {\"name\":\"transform\", \"type\":\"CGAffineTransform\"}, {\"name\":\"superview\", \"type\":\"UIView\"}, {\"name\":\"window\", \"type\":\"UIWindow\"}, {\"name\":\"subviews\", \"type\":\"NSArray\"}, {\"name\":\"jjf_fingerprintVersion\", \"type\":\"NSArray\", \"use_kvc\":false }, {\"name\":\"jjf_varA\", \"type\":\"NSString\", \"use_kvc\":false },{\"name\":\"sensorsAnalyticsViewID\", \"type\":\"NSString\", \"use_kvc\":false }, {\"name\":\"jjf_varB\", \"type\":\"NSString\", \"use_kvc\":false }, {\"name\":\"jjf_varC\", \"type\":\"NSString\", \"use_kvc\":false }, {\"name\":\"jjf_varSetD\", \"type\":\"NSArray\", \"use_kvc\":false }, {\"name\":\"jjf_varE\", \"type\":\"NSString\", \"use_kvc\":false }, {\"name\":\"restorationIdentifier\", \"type\":\"NSString\"} ] }, {\"name\":\"UILabel\", \"superclass\":\"UIView\", \"properties\":[{\"name\":\"text\", \"type\":\"NSString\"} ] }, {\"name\":\"UIImageView\", \"superclass\":\"UIView\", \"properties\":[] }, {\"name\":\"UIControlTargetAction\", \"superclass\":\"NSObject\", \"properties\":[] }, {\"name\":\"UIControl\", \"superclass\":\"UIView\", \"properties\":[{\"name\":\"state\", \"type\":\"UIControlState\"}, {\"name\":\"enabled\", \"type\":\"BOOL\"}, {\"name\":\"allTargets\", \"type\":\"NSSet\"}, {\"name\":\"allControlEvents\", \"type\":\"UIControlEvents\"}, {\"name\":\"_targetActions\", \"type\":\"NSArray\"}, {\"name\":\"nextResponder\", \"type\":\"UIResponder\"} ] }, {\"name\":\"UISwitch\", \"superclass\":\"UIControl\", \"properties\":[] }, {\"name\":\"UIScrollView\", \"superclass\":\"UIView\", \"properties\":[{\"name\":\"contentOffset\", \"type\":\"CGPoint\"}, {\"name\":\"contentSize\", \"type\":\"CGSize\"} ] }, {\"name\":\"UITableView\", \"superclass\":\"UIScrollView\", \"properties\":[{\"name\":\"allowsSelection\", \"type\":\"BOOL\"} ] }, {\"name\":\"UITextView\", \"superclass\":\"UIScrollView\", \"properties\":[{\"name\":\"text\", \"type\":\"NSString\"} ] }, {\"name\":\"UIButton\", \"superclass\":\"UIControl\", \"properties\":[] }, {\"name\":\"CALayer\", \"superclass\":\"NSObject\", \"properties\":[] }, {\"name\":\"NSLayoutConstraint\", \"superclass\":\"NSObject\", \"properties\":[] }, {\"name\":\"UIWindow\", \"superclass\":\"UIView\", \"properties\":[{\"name\":\"rootViewController\", \"type\":\"UIViewController\"}, {\"name\":\"screen\", \"type\":\"UIScreen\", \"readonly\":true } ] }, {\"name\":\"UIViewController\", \"superclass\":\"UIResponder\", \"properties\":[{\"name\":\"isViewLoaded\", \"type\":\"BOOL\", \"readonly\":true }, {\"name\":\"view\", \"type\":\"UIView\", \"predicate\":\"self.isViewLoaded == YES\"}, {\"name\":\"restorationIdentifier\", \"type\":\"NSString\"}, {\"name\":\"parentViewController\", \"type\":\"UIViewController\"}, {\"name\":\"presentedViewController\", \"type\":\"UIViewController\"}, {\"name\":\"presentingViewController\", \"type\":\"UIViewController\"}, {\"name\":\"childViewControllers\", \"type\":\"NSArray\"} ] } ] } } }";
     _commandQueue.suspended = NO;
     if (!_connected) {
         _connected = YES;
         
         NSString *alertTitle = @"提示";
-        NSString *alertMessage = @"正在连接到 App 点击图...";
+        NSString *alertMessage = @"正在连接 APP 点击分析";
+        if (!isWifi) {
+            alertMessage = @"正在连接 APP 点击分析，建议在 WiFi 环境下使用";
+        }
         
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
             UIWindow *mainWindow = [SensorsAnalyticsSDK sharedInstance].vtrackWindow;
@@ -205,7 +212,11 @@
                 [self startHeatMapTimer:message withFeatureCode:featureCode withUrl:postUrl];
             }]];
             
-            [[mainWindow rootViewController] presentViewController:connectAlert animated:YES completion:nil];
+            UIViewController *viewController = mainWindow.rootViewController;
+            while (viewController.presentedViewController) {
+                viewController = viewController.presentedViewController;
+            }
+            [viewController presentViewController:connectAlert animated:YES completion:nil];
         } else {
             _connected = YES;
             

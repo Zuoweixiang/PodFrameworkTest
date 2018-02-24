@@ -8,7 +8,7 @@
 /// Copyright (c) 2014 Mixpanel. All rights reserved.
 //
 
-#import "LFCGzipUtility.h"
+#import "SAGzipUtility.h"
 #import "NSData+SABase64.h"
 #import "SAAbstractHeatMapMessage.h"
 #import "SensorsAnalyticsSDK.h"
@@ -78,7 +78,7 @@
         NSString * jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 
         // 2. 使用 GZip 进行压缩
-        NSData *zippedData = [LFCGzipUtility gzipData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+        NSData *zippedData = [SAGzipUtility gzipData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
 
         // 3. Base64 Encode
         NSString *b64String = [zippedData sa_base64EncodedString];

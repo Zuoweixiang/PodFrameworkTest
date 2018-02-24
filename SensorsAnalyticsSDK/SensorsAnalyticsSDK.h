@@ -38,14 +38,14 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UIImage (SensorsAnalytics)
-@property (assign,nonatomic) NSString* sensorsAnalyticsImageName;
+@property (nonatomic,copy) NSString* sensorsAnalyticsImageName;
 @end
 
 @interface UIView (SensorsAnalytics)
 - (nullable UIViewController *)viewController;
 
 //viewID
-@property (assign,nonatomic) NSString* sensorsAnalyticsViewID;
+@property (copy,nonatomic) NSString* sensorsAnalyticsViewID;
 
 //AutoTrack 时，是否忽略该 View
 @property (nonatomic,assign) BOOL sensorsAnalyticsIgnoreView;
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL sensorsAnalyticsAutoTrackAfterSendAction;
 
 //AutoTrack 时，View 的扩展属性
-@property (assign,nonatomic) NSDictionary* sensorsAnalyticsViewProperties;
+@property (strong,nonatomic) NSDictionary* sensorsAnalyticsViewProperties;
 
 @property (nonatomic, weak, nullable) id sensorsAnalyticsDelegate;
 @end
@@ -267,6 +267,7 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  */
 @property (atomic) UIWindow *vtrackWindow;
 
+#pragma mark- init instance
 /**
  * @abstract
  * 根据传入的配置，初始化并返回一个<code>SensorsAnalyticsSDK</code>的单例
@@ -284,8 +285,8 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  *
  * @return 返回的单例
  */
-+ (SensorsAnalyticsSDK *)sharedInstanceWithServerURL:(NSString *)serverURL
-                                     andConfigureURL:(NSString *)configureURL
++ (SensorsAnalyticsSDK *)sharedInstanceWithServerURL:(nullable NSString *)serverURL
+                                     andConfigureURL:(nullable NSString *)configureURL
                                         andDebugMode:(SensorsAnalyticsDebugMode)debugMode;
 
 /**
@@ -299,9 +300,21 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  *
  * @return 返回的单例
  */
-+ (SensorsAnalyticsSDK *)sharedInstanceWithServerURL:(NSString *)serverURL
-                                     andConfigureURL:(NSString *)configureURL
++ (SensorsAnalyticsSDK *)sharedInstanceWithServerURL:(nullable NSString *)serverURL
+                                     andConfigureURL:(nullable NSString *)configureURL
                                   andVTrackServerURL:(nullable NSString *)vtrackServerURL
+                                        andDebugMode:(SensorsAnalyticsDebugMode)debugMode;
+
+/**
+ * @abstract
+ * 根据传入的配置，初始化并返回一个<code>SensorsAnalyticsSDK</code>的单例
+ *
+ * @param serverURL 收集事件的URL
+ * @param debugMode Sensors Analytics 的Debug模式
+ *
+ * @return 返回的单例
+ */
++ (SensorsAnalyticsSDK *)sharedInstanceWithServerURL:(nullable NSString *)serverURL
                                         andDebugMode:(SensorsAnalyticsDebugMode)debugMode;
 
 /**
@@ -317,6 +330,21 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
 
 /**
  * @abstract
+ * 返回预置的属性
+ *
+ * @return NSDictionary 返回预置的属性
+ */
+- (NSDictionary *)getPresetProperties;
+
+/**
+ * @abstract
+ * 设置当前 serverUrl
+ *
+ */
+- (void)setServerUrl:(NSString *)serverUrl;
+
+/**
+ * @abstract
  * 允许 App 连接可视化埋点管理界面
  *
  * @discussion
@@ -325,6 +353,7 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  */
 - (void)enableEditingVTrack;
 
+#pragma mark- about webView
 /**
  * @abstract
  * 将distinctId传递给当前的WebView
@@ -337,6 +366,8 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  * @return YES:SDK已进行处理，NO:SDK没有进行处理
  */
 - (BOOL)showUpWebView:(id)webView WithRequest:(NSURLRequest *)request;
+
+- (BOOL)showUpWebView:(id)webView WithRequest:(NSURLRequest *)request enableVerify:(BOOL)enableVerify;
 
 /**
  * @abstract
@@ -353,6 +384,7 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  */
 - (BOOL)showUpWebView:(id)webView WithRequest:(NSURLRequest *)request andProperties:(nullable NSDictionary *)propertyDict;
 
+#pragma mark--cache and flush
 /**
  * @abstract
  * 设置本地缓存最多事件条数
@@ -405,6 +437,12 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  * 重置默认匿名id
  */
 - (void)resetAnonymousId;
+
+/**
+ * @abstract
+ * 自动收集 App Crash 日志，该功能默认是关闭的
+ */
+- (void)trackAppCrash;
 
 /**
  * @property
@@ -522,7 +560,7 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  * @param distinctId 当前用户的distinctId
  */
 - (void)identify:(NSString *)distinctId;
-
+#pragma mark - track event
 /**
  * @abstract
  * 调用track接口，追踪一个带有属性的event
@@ -658,6 +696,24 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
 
 /**
  * @abstract
+ * 用于在 App 首次启动时追踪渠道来源，并设置追踪渠道事件的属性。SDK会将渠道值填入事件属性 $utm_ 开头的一系列属性中。
+ *
+ * @discussion
+ * propertyDict是一个Map。
+ * 其中的key是Property的名称，必须是<code>NSString</code>
+ * value则是Property的内容，只支持 <code>NSString</code>,<code>NSNumber</code>,<code>NSSet</code>,<code>NSDate</code>这些类型
+ * 特别的，<code>NSSet</code>类型的value中目前只支持其中的元素是<code>NSString</code>
+ *
+ * 这个接口是一个较为复杂的功能，请在使用前先阅读相关说明: https://sensorsdata.cn/manual/track_installation.html，并在必要时联系我们的技术支持人员。
+ *
+ * @param event             event的名称
+ * @param propertyDict     event的属性
+ * @param disableCallback     是否关闭这次渠道匹配的回调请求
+ */
+- (void)trackInstallation:(NSString *)event withProperties:(nullable NSDictionary *)propertyDict disableCallback:(BOOL)disableCallback;
+
+/**
+ * @abstract
  * 用于在 App 首次启动时追踪渠道来源，SDK会将渠道值填入事件属性 $utm_ 开头的一系列属性中
  * 使用该接口
  *
@@ -667,6 +723,10 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  * @param event             event的名称
  */
 - (void)trackInstallation:(NSString *)event;
+
+- (void)trackFromH5WithEvent:(NSString *)eventInfo;
+
+- (void)trackFromH5WithEvent:(NSString *)eventInfo enableVerify:(BOOL)enableVerify;
 
 /**
  * @abstract
@@ -686,6 +746,12 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
 
 /**
  * @abstract
+ * App 退出或进到后台时清空 referrer，默认情况下不清空
+ */
+- (void)clearReferrerWhenAppEnd;
+
+/**
+ * @abstract
  * 获取LastScreenTrackProperties
  *
  * @return LastScreenTrackProperties
@@ -693,6 +759,33 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
 - (NSDictionary *)getLastScreenTrackProperties;
 
 - (void)addWebViewUserAgentSensorsDataFlag;
+
+- (SensorsAnalyticsDebugMode)debugMode;
+
+/**
+ * @abstract
+ * 通过代码触发 UIView 的 $AppClick 事件
+ *
+ * @param view UIView
+ */
+- (void)trackViewAppClick:(nonnull UIView *)view;
+
+/**
+ * @abstract
+ * 通过代码触发 UIViewController 的 $AppViewScreen 事件
+ *
+ * @param viewController 当前的 UIViewController
+ */
+- (void)trackViewScreen:(UIViewController *)viewController;
+
+/**
+ * @abstract
+ * 通过代码触发 UIView 的 $AppClick 事件
+ *
+ * @param view UIView
+ * @param properties 自定义属性
+ */
+- (void)trackViewAppClick:(nonnull UIView *)view withProperties:(nullable NSDictionary *)properties;
 
 /**
  * @abstract
@@ -702,6 +795,15 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  * @param properties 用户扩展属性
  */
 - (void)trackViewScreen:(NSString *)url withProperties:(NSDictionary *)properties;
+
+/**
+ @abstract
+ * Track App Extension groupIdentifier 中缓存的数据
+ *
+ * @param groupIdentifier groupIdentifier
+ * @param completion  完成 track 后的 callback
+ */
+- (void)trackEventFromExtensionWithGroupIdentifier:(NSString *)groupIdentifier completion:(void (^)(NSString *groupIdentifier, NSArray *events)) completion;
 
 /**
  * @abstract
@@ -756,7 +858,7 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
  * 主动调用flush接口，则不论flushInterval和网络类型的限制条件是否满足，都尝试向服务器上传一次数据
  */
 - (void)flush;
-
+#pragma mark- heatMap
 - (BOOL)handleHeatMapUrl:(NSURL *)url;
 
 /**
@@ -774,7 +876,7 @@ typedef NS_OPTIONS(NSInteger, SensorsAnalyticsNetworkType) {
 - (void)addHeatMapViewControllers:(NSArray *)controllers;
 
 - (BOOL)isHeatMapViewController:(UIViewController *)viewController;
-
+#pragma mark- profile
 /**
  * @abstract
  * 直接设置用户的一个或者几个Profiles

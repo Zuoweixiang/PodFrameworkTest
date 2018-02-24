@@ -22,7 +22,7 @@
 - (void)setSessionObject:(id)object forKey:(NSString *)key;
 - (id)sessionObjectForKey:(NSString *)key;
 - (void)sendMessage:(id<SAHeatMapMessage>)message;
-- (void)showOpenHeatMapDialog:(NSString *)featureCode withUrl:(NSString *)postUrl;
+- (void)showOpenHeatMapDialog:(NSString *)featureCode withUrl:(NSString *)postUrl isWifi:(BOOL)isWifi;
 - (void)close;
 
 @end

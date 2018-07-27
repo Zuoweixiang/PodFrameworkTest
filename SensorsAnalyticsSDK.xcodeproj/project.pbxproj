@@ -134,7 +134,110 @@
 		A12ACBF62041042F00FC9766 /* SALogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB942041042F00FC9766 /* SALogger.h */; };
 		A12ACBF72041042F00FC9766 /* SAValueTransformers.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB952041042F00FC9766 /* SAValueTransformers.h */; };
 		A12ACBF82041042F00FC9766 /* UIActionSheet+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB962041042F00FC9766 /* UIActionSheet+AutoTrack.h */; };
-		A1E9C8CA1F9D9AE40029DDC5 /* Sensorsdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E9C8C31F9D9AE40029DDC5 /* Sensorsdata.framework */; };
+		A1AC19E9210ACCC2000BBD6E /* SATypeDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB332041042F00FC9766 /* SATypeDescription.m */; };
+		A1AC19EA210ACCC2000BBD6E /* SAUITableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB342041042F00FC9766 /* SAUITableViewBinding.m */; };
+		A1AC19EB210ACCC2000BBD6E /* NSString+HashCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB362041042F00FC9766 /* NSString+HashCode.m */; };
+		A1AC19EC210ACCC2000BBD6E /* UITableView+AutoTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB3C2041042F00FC9766 /* UITableView+AutoTrack.m */; };
+		A1AC19ED210ACCC2000BBD6E /* SAWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB3D2041042F00FC9766 /* SAWebSocket.m */; };
+		A1AC19EE210ACCC2000BBD6E /* SensorsAnalyticsSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB3E2041042F00FC9766 /* SensorsAnalyticsSDK.m */; };
+		A1AC19EF210ACCC2000BBD6E /* SAHeatMapSnapshotMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB422041042F00FC9766 /* SAHeatMapSnapshotMessage.m */; };
+		A1AC19F0210ACCC2000BBD6E /* UIImage+AutoTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB442041042F00FC9766 /* UIImage+AutoTrack.m */; };
+		A1AC19F1210ACCC2000BBD6E /* SADesignerDeviceInfoMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB462041042F00FC9766 /* SADesignerDeviceInfoMessage.m */; };
+		A1AC19F2210ACCC2000BBD6E /* NSData+SABase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB472041042F00FC9766 /* NSData+SABase64.m */; };
+		A1AC19F3210ACCC2000BBD6E /* SAObjectSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB492041042F00FC9766 /* SAObjectSelector.m */; };
+		A1AC19F4210ACCC2000BBD6E /* SensorsAnalyticsExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB4C2041042F00FC9766 /* SensorsAnalyticsExceptionHandler.m */; };
+		A1AC19F5210ACCC2000BBD6E /* UITabBar+AutoTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB4D2041042F00FC9766 /* UITabBar+AutoTrack.m */; };
+		A1AC19F6210ACCC2000BBD6E /* JSONUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB4E2041042F00FC9766 /* JSONUtil.m */; };
+		A1AC19F7210ACCC2000BBD6E /* UIViewController+AutoTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB502041042F00FC9766 /* UIViewController+AutoTrack.m */; };
+		A1AC19F8210ACCC2000BBD6E /* SAPropertyDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB552041042F00FC9766 /* SAPropertyDescription.m */; };
+		A1AC19F9210ACCC2000BBD6E /* SAAppExtensionDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB562041042F00FC9766 /* SAAppExtensionDataManager.m */; };
+		A1AC19FA210ACCC2000BBD6E /* SASwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB572041042F00FC9766 /* SASwizzler.m */; };
+		A1AC19FB210ACCC2000BBD6E /* SADesignerSnapshotMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB592041042F00FC9766 /* SADesignerSnapshotMessage.m */; };
+		A1AC19FC210ACCC2000BBD6E /* SAEnumDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB5A2041042F00FC9766 /* SAEnumDescription.m */; };
+		A1AC19FD210ACCC2000BBD6E /* SAValueTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB5C2041042F00FC9766 /* SAValueTransformers.m */; };
+		A1AC19FE210ACCC2000BBD6E /* UIActionSheet+AutoTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB5D2041042F00FC9766 /* UIActionSheet+AutoTrack.m */; };
+		A1AC19FF210ACCC2000BBD6E /* UIApplication+AutoTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB5E2041042F00FC9766 /* UIApplication+AutoTrack.m */; };
+		A1AC1A00210ACCC2000BBD6E /* SAEventBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB602041042F00FC9766 /* SAEventBinding.m */; };
+		A1AC1A01210ACCC2000BBD6E /* MessageQueueBySqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB612041042F00FC9766 /* MessageQueueBySqlite.m */; };
+		A1AC1A02210ACCC2000BBD6E /* SAServerUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB622041042F00FC9766 /* SAServerUrl.m */; };
+		A1AC1A03210ACCC2000BBD6E /* SAObjectIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB682041042F00FC9766 /* SAObjectIdentityProvider.m */; };
+		A1AC1A04210ACCC2000BBD6E /* NSInvocation+SAHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB692041042F00FC9766 /* NSInvocation+SAHelpers.m */; };
+		A1AC1A05210ACCC2000BBD6E /* UIView+SAHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB6A2041042F00FC9766 /* UIView+SAHelpers.m */; };
+		A1AC1A06210ACCC2000BBD6E /* UICollectionView+AutoTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB6B2041042F00FC9766 /* UICollectionView+AutoTrack.m */; };
+		A1AC1A07210ACCC2000BBD6E /* SADesignerDisconnectMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB6D2041042F00FC9766 /* SADesignerDisconnectMessage.m */; };
+		A1AC1A08210ACCC2000BBD6E /* UIAlertView+AutoTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB702041042F00FC9766 /* UIAlertView+AutoTrack.m */; };
+		A1AC1A09210ACCC2000BBD6E /* SASwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB752041042F00FC9766 /* SASwizzle.m */; };
+		A1AC1A0A210ACCC2000BBD6E /* SAApplicationStateSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB762041042F00FC9766 /* SAApplicationStateSerializer.m */; };
+		A1AC1A0B210ACCC2000BBD6E /* SADesignerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB782041042F00FC9766 /* SADesignerConnection.m */; };
+		A1AC1A0C210ACCC2000BBD6E /* SAAbstractDesignerMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB7C2041042F00FC9766 /* SAAbstractDesignerMessage.m */; };
+		A1AC1A0D210ACCC2000BBD6E /* SAClassDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB7E2041042F00FC9766 /* SAClassDescription.m */; };
+		A1AC1A0E210ACCC2000BBD6E /* SAObjectSerializerContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB7F2041042F00FC9766 /* SAObjectSerializerContext.m */; };
+		A1AC1A0F210ACCC2000BBD6E /* AutoTrackUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB802041042F00FC9766 /* AutoTrackUtils.m */; };
+		A1AC1A10210ACCC2000BBD6E /* SAObjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB832041042F00FC9766 /* SAObjectSerializer.m */; };
+		A1AC1A11210ACCC2000BBD6E /* SADesignerEventBindingMesssage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB872041042F00FC9766 /* SADesignerEventBindingMesssage.m */; };
+		A1AC1A12210ACCC2000BBD6E /* SAReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB8A2041042F00FC9766 /* SAReachability.m */; };
+		A1AC1A13210ACCC2000BBD6E /* SAGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB8B2041042F00FC9766 /* SAGzipUtility.m */; };
+		A1AC1A14210ACCC2000BBD6E /* SAObjectSerializerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB8C2041042F00FC9766 /* SAObjectSerializerConfig.m */; };
+		A1AC1A15210ACCC2000BBD6E /* SAUIControlBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB8D2041042F00FC9766 /* SAUIControlBinding.m */; };
+		A1AC1A16210ACCC2000BBD6E /* SAAbstractHeatMapMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB912041042F00FC9766 /* SAAbstractHeatMapMessage.m */; };
+		A1AC1A17210ACCC2000BBD6E /* SAHeapMapConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A12ACB932041042F00FC9766 /* SAHeapMapConnection.m */; };
+		A1AC1A18210ACCF4000BBD6E /* SADesignerDisconnectMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB352041042F00FC9766 /* SADesignerDisconnectMessage.h */; };
+		A1AC1A19210ACCF4000BBD6E /* UICollectionView+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB372041042F00FC9766 /* UICollectionView+AutoTrack.h */; };
+		A1AC1A1A210ACCF4000BBD6E /* UIView+SAHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB382041042F00FC9766 /* UIView+SAHelpers.h */; };
+		A1AC1A1B210ACCF5000BBD6E /* NSInvocation+SAHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB392041042F00FC9766 /* NSInvocation+SAHelpers.h */; };
+		A1AC1A1C210ACCF5000BBD6E /* SAObjectIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB3A2041042F00FC9766 /* SAObjectIdentityProvider.h */; };
+		A1AC1A1D210ACCF5000BBD6E /* SAObjectSerializerContext.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB402041042F00FC9766 /* SAObjectSerializerContext.h */; };
+		A1AC1A1E210ACCF5000BBD6E /* AutoTrackUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB412041042F00FC9766 /* AutoTrackUtils.h */; };
+		A1AC1A1F210ACCF5000BBD6E /* SAClassDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB432041042F00FC9766 /* SAClassDescription.h */; };
+		A1AC1A20210ACCF5000BBD6E /* SAAbstractDesignerMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB452041042F00FC9766 /* SAAbstractDesignerMessage.h */; };
+		A1AC1A21210ACCF5000BBD6E /* SADesignerConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB482041042F00FC9766 /* SADesignerConnection.h */; };
+		A1AC1A22210ACCF5000BBD6E /* SASwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB4A2041042F00FC9766 /* SASwizzle.h */; };
+		A1AC1A23210ACCF5000BBD6E /* SAApplicationStateSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB4B2041042F00FC9766 /* SAApplicationStateSerializer.h */; };
+		A1AC1A24210ACCF5000BBD6E /* UIAlertView+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB4F2041042F00FC9766 /* UIAlertView+AutoTrack.h */; };
+		A1AC1A25210ACCF5000BBD6E /* SAHeatMapConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB512041042F00FC9766 /* SAHeatMapConnection.h */; };
+		A1AC1A26210ACCF5000BBD6E /* SAObjectSerializerConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB522041042F00FC9766 /* SAObjectSerializerConfig.h */; };
+		A1AC1A27210ACCF5000BBD6E /* SAGzipUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB532041042F00FC9766 /* SAGzipUtility.h */; };
+		A1AC1A28210ACCF5000BBD6E /* SAReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB542041042F00FC9766 /* SAReachability.h */; };
+		A1AC1A29210ACCF5000BBD6E /* SAObjectSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB582041042F00FC9766 /* SAObjectSerializer.h */; };
+		A1AC1A2A210ACCF5000BBD6E /* SADesignerEventBindingMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB5B2041042F00FC9766 /* SADesignerEventBindingMessage.h */; };
+		A1AC1A2B210ACCF5000BBD6E /* SAAbstractHeatMapMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB5F2041042F00FC9766 /* SAAbstractHeatMapMessage.h */; };
+		A1AC1A2C210ACCF5000BBD6E /* SAUIControlBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB632041042F00FC9766 /* SAUIControlBinding.h */; };
+		A1AC1A2D210ACCF5000BBD6E /* SensorsAnalyticsSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB642041042F00FC9766 /* SensorsAnalyticsSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1AC1A2E210ACCF5000BBD6E /* SAWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB652041042F00FC9766 /* SAWebSocket.h */; };
+		A1AC1A2F210ACCF5000BBD6E /* UITableView+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB662041042F00FC9766 /* UITableView+AutoTrack.h */; };
+		A1AC1A30210ACCF5000BBD6E /* SADesignerMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB672041042F00FC9766 /* SADesignerMessage.h */; };
+		A1AC1A31210ACCF5000BBD6E /* NSString+HashCode.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB6C2041042F00FC9766 /* NSString+HashCode.h */; };
+		A1AC1A32210ACCF5000BBD6E /* SATypeDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB6E2041042F00FC9766 /* SATypeDescription.h */; };
+		A1AC1A33210ACCF5000BBD6E /* SAUITableViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB6F2041042F00FC9766 /* SAUITableViewBinding.h */; };
+		A1AC1A34210ACCF5000BBD6E /* UIViewController+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB712041042F00FC9766 /* UIViewController+AutoTrack.h */; };
+		A1AC1A35210ACCF5000BBD6E /* JSONUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB722041042F00FC9766 /* JSONUtil.h */; };
+		A1AC1A36210ACCF5000BBD6E /* UITabBar+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB732041042F00FC9766 /* UITabBar+AutoTrack.h */; };
+		A1AC1A37210ACCF5000BBD6E /* SensorsAnalyticsExceptionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB742041042F00FC9766 /* SensorsAnalyticsExceptionHandler.h */; };
+		A1AC1A38210ACCF5000BBD6E /* SAObjectSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB772041042F00FC9766 /* SAObjectSelector.h */; };
+		A1AC1A39210ACCF5000BBD6E /* NSData+SABase64.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB792041042F00FC9766 /* NSData+SABase64.h */; };
+		A1AC1A3A210ACCF5000BBD6E /* UIImage+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB7A2041042F00FC9766 /* UIImage+AutoTrack.h */; };
+		A1AC1A3B210ACCF5000BBD6E /* SADesignerDeviceInfoMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB7B2041042F00FC9766 /* SADesignerDeviceInfoMessage.h */; };
+		A1AC1A3C210ACCF5000BBD6E /* SAHeatMapSnapshotMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB7D2041042F00FC9766 /* SAHeatMapSnapshotMessage.h */; };
+		A1AC1A3D210ACCF5000BBD6E /* SAEnumDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB812041042F00FC9766 /* SAEnumDescription.h */; };
+		A1AC1A3E210ACCF5000BBD6E /* SADesignerSnapshotMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB822041042F00FC9766 /* SADesignerSnapshotMessage.h */; };
+		A1AC1A3F210ACCF5000BBD6E /* SASwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB842041042F00FC9766 /* SASwizzler.h */; };
+		A1AC1A40210ACCF5000BBD6E /* SAAppExtensionDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB852041042F00FC9766 /* SAAppExtensionDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1AC1A41210ACCF5000BBD6E /* SADesignerSessionCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB862041042F00FC9766 /* SADesignerSessionCollection.h */; };
+		A1AC1A42210ACCF5000BBD6E /* SAPropertyDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB882041042F00FC9766 /* SAPropertyDescription.h */; };
+		A1AC1A43210ACCF5000BBD6E /* SAHeatMapMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB892041042F00FC9766 /* SAHeatMapMessage.h */; };
+		A1AC1A44210ACCF5000BBD6E /* SAServerUrl.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB8E2041042F00FC9766 /* SAServerUrl.h */; };
+		A1AC1A45210ACCF5000BBD6E /* MessageQueueBySqlite.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB8F2041042F00FC9766 /* MessageQueueBySqlite.h */; };
+		A1AC1A46210ACCF5000BBD6E /* SAEventBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB902041042F00FC9766 /* SAEventBinding.h */; };
+		A1AC1A47210ACCF5000BBD6E /* UIApplication+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB922041042F00FC9766 /* UIApplication+AutoTrack.h */; };
+		A1AC1A48210ACCF5000BBD6E /* SALogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB942041042F00FC9766 /* SALogger.h */; };
+		A1AC1A49210ACCF5000BBD6E /* SAValueTransformers.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB952041042F00FC9766 /* SAValueTransformers.h */; };
+		A1AC1A4A210ACCF5000BBD6E /* UIActionSheet+AutoTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = A12ACB962041042F00FC9766 /* UIActionSheet+AutoTrack.h */; };
+		A1AC1A4D210ACDB9000BBD6E /* SASDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1E231991FA327CC009857A6 /* SASDKResources.bundle */; };
+		A1AC1A63210AED42000BBD6E /* SensorsAnalyticsSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A12ACB642041042F00FC9766 /* SensorsAnalyticsSDK.h */; };
+		A1AC1A64210AED4A000BBD6E /* SAAppExtensionDataManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A12ACB852041042F00FC9766 /* SAAppExtensionDataManager.h */; };
+		A1AC1A65210AED54000BBD6E /* SASDKResources.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E231991FA327CC009857A6 /* SASDKResources.bundle */; };
+		A1AC1A68210AED97000BBD6E /* libSensorsAnalyticsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5CA7771B43E92D00D7ACB7 /* libSensorsAnalyticsSDK.a */; };
+		A1AC1A69210AEF62000BBD6E /* SASDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1E231991FA327CC009857A6 /* SASDKResources.bundle */; };
 		A1E9C8CB1F9D9AE40029DDC5 /* Sensorsdata.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1E9C8C31F9D9AE40029DDC5 /* Sensorsdata.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1E9C92A1F9D9E5C0029DDC5 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3746EE11C32E819008A50A3 /* libicucore.tbd */; };
 		A36649201CC784A1008D991E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A366491F1CC784A1008D991E /* SafariServices.framework */; };
@@ -145,14 +248,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A1CE09AC1F9E16B800344A90 /* PBXContainerItemProxy */ = {
+		A1AC1A4B210ACD55000BBD6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4D5CA76F1B43E92D00D7ACB7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A1E9C8C21F9D9AE40029DDC5;
-			remoteInfo = Sensorsdata;
+			remoteGlobalIDString = A1E231981FA327CC009857A6;
+			remoteInfo = SASDKResources;
 		};
-		A1E9C8C81F9D9AE40029DDC5 /* PBXContainerItemProxy */ = {
+		A1AC1A61210AED18000BBD6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D5CA76F1B43E92D00D7ACB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1E231981FA327CC009857A6;
+			remoteInfo = SASDKResources;
+		};
+		A1AC1A66210AED90000BBD6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D5CA76F1B43E92D00D7ACB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D5CA7761B43E92D00D7ACB7;
+			remoteInfo = SensorsAnalyticsSDK;
+		};
+		A1CE09AC1F9E16B800344A90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4D5CA76F1B43E92D00D7ACB7 /* Project object */;
 			proxyType = 1;
@@ -168,6 +285,9 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				A1AC1A65210AED54000BBD6E /* SASDKResources.bundle in CopyFiles */,
+				A1AC1A64210AED4A000BBD6E /* SAAppExtensionDataManager.h in CopyFiles */,
+				A1AC1A63210AED42000BBD6E /* SensorsAnalyticsSDK.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,9 +448,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1AC1A68210AED97000BBD6E /* libSensorsAnalyticsSDK.a in Frameworks */,
 				00DC9CD71D7E9CFA00C7DF6C /* WebKit.framework in Frameworks */,
 				A36649201CC784A1008D991E /* SafariServices.framework in Frameworks */,
-				A1E9C8CA1F9D9AE40029DDC5 /* Sensorsdata.framework in Frameworks */,
 				A3746EE31C32E822008A50A3 /* libicucore.tbd in Frameworks */,
 				A3746D911C2FF355008A50A3 /* libsqlite3.tbd in Frameworks */,
 				A3746D8F1C2FF34D008A50A3 /* libz.1.2.5.tbd in Frameworks */,
@@ -625,6 +745,57 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1AC1A40210ACCF5000BBD6E /* SAAppExtensionDataManager.h in Headers */,
+				A1AC1A2D210ACCF5000BBD6E /* SensorsAnalyticsSDK.h in Headers */,
+				A1AC1A18210ACCF4000BBD6E /* SADesignerDisconnectMessage.h in Headers */,
+				A1AC1A19210ACCF4000BBD6E /* UICollectionView+AutoTrack.h in Headers */,
+				A1AC1A1A210ACCF4000BBD6E /* UIView+SAHelpers.h in Headers */,
+				A1AC1A1B210ACCF5000BBD6E /* NSInvocation+SAHelpers.h in Headers */,
+				A1AC1A1C210ACCF5000BBD6E /* SAObjectIdentityProvider.h in Headers */,
+				A1AC1A1D210ACCF5000BBD6E /* SAObjectSerializerContext.h in Headers */,
+				A1AC1A1E210ACCF5000BBD6E /* AutoTrackUtils.h in Headers */,
+				A1AC1A1F210ACCF5000BBD6E /* SAClassDescription.h in Headers */,
+				A1AC1A20210ACCF5000BBD6E /* SAAbstractDesignerMessage.h in Headers */,
+				A1AC1A21210ACCF5000BBD6E /* SADesignerConnection.h in Headers */,
+				A1AC1A22210ACCF5000BBD6E /* SASwizzle.h in Headers */,
+				A1AC1A23210ACCF5000BBD6E /* SAApplicationStateSerializer.h in Headers */,
+				A1AC1A24210ACCF5000BBD6E /* UIAlertView+AutoTrack.h in Headers */,
+				A1AC1A25210ACCF5000BBD6E /* SAHeatMapConnection.h in Headers */,
+				A1AC1A26210ACCF5000BBD6E /* SAObjectSerializerConfig.h in Headers */,
+				A1AC1A27210ACCF5000BBD6E /* SAGzipUtility.h in Headers */,
+				A1AC1A28210ACCF5000BBD6E /* SAReachability.h in Headers */,
+				A1AC1A29210ACCF5000BBD6E /* SAObjectSerializer.h in Headers */,
+				A1AC1A2A210ACCF5000BBD6E /* SADesignerEventBindingMessage.h in Headers */,
+				A1AC1A2B210ACCF5000BBD6E /* SAAbstractHeatMapMessage.h in Headers */,
+				A1AC1A2C210ACCF5000BBD6E /* SAUIControlBinding.h in Headers */,
+				A1AC1A2E210ACCF5000BBD6E /* SAWebSocket.h in Headers */,
+				A1AC1A2F210ACCF5000BBD6E /* UITableView+AutoTrack.h in Headers */,
+				A1AC1A30210ACCF5000BBD6E /* SADesignerMessage.h in Headers */,
+				A1AC1A31210ACCF5000BBD6E /* NSString+HashCode.h in Headers */,
+				A1AC1A32210ACCF5000BBD6E /* SATypeDescription.h in Headers */,
+				A1AC1A33210ACCF5000BBD6E /* SAUITableViewBinding.h in Headers */,
+				A1AC1A34210ACCF5000BBD6E /* UIViewController+AutoTrack.h in Headers */,
+				A1AC1A35210ACCF5000BBD6E /* JSONUtil.h in Headers */,
+				A1AC1A36210ACCF5000BBD6E /* UITabBar+AutoTrack.h in Headers */,
+				A1AC1A37210ACCF5000BBD6E /* SensorsAnalyticsExceptionHandler.h in Headers */,
+				A1AC1A38210ACCF5000BBD6E /* SAObjectSelector.h in Headers */,
+				A1AC1A39210ACCF5000BBD6E /* NSData+SABase64.h in Headers */,
+				A1AC1A3A210ACCF5000BBD6E /* UIImage+AutoTrack.h in Headers */,
+				A1AC1A3B210ACCF5000BBD6E /* SADesignerDeviceInfoMessage.h in Headers */,
+				A1AC1A3C210ACCF5000BBD6E /* SAHeatMapSnapshotMessage.h in Headers */,
+				A1AC1A3D210ACCF5000BBD6E /* SAEnumDescription.h in Headers */,
+				A1AC1A3E210ACCF5000BBD6E /* SADesignerSnapshotMessage.h in Headers */,
+				A1AC1A3F210ACCF5000BBD6E /* SASwizzler.h in Headers */,
+				A1AC1A41210ACCF5000BBD6E /* SADesignerSessionCollection.h in Headers */,
+				A1AC1A42210ACCF5000BBD6E /* SAPropertyDescription.h in Headers */,
+				A1AC1A43210ACCF5000BBD6E /* SAHeatMapMessage.h in Headers */,
+				A1AC1A44210ACCF5000BBD6E /* SAServerUrl.h in Headers */,
+				A1AC1A45210ACCF5000BBD6E /* MessageQueueBySqlite.h in Headers */,
+				A1AC1A46210ACCF5000BBD6E /* SAEventBinding.h in Headers */,
+				A1AC1A47210ACCF5000BBD6E /* UIApplication+AutoTrack.h in Headers */,
+				A1AC1A48210ACCF5000BBD6E /* SALogger.h in Headers */,
+				A1AC1A49210ACCF5000BBD6E /* SAValueTransformers.h in Headers */,
+				A1AC1A4A210ACCF5000BBD6E /* UIActionSheet+AutoTrack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,7 +814,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A1E9C8C91F9D9AE40029DDC5 /* PBXTargetDependency */,
+				A1AC1A67210AED90000BBD6E /* PBXTargetDependency */,
 			);
 			name = HelloSensorsAnalytics;
 			productName = HelloSensorsAnalytics;
@@ -662,6 +833,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A1AC1A62210AED18000BBD6E /* PBXTargetDependency */,
 			);
 			name = SensorsAnalyticsSDK;
 			productName = SensorsAnalyticsSDK;
@@ -697,6 +869,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A1AC1A4C210ACD55000BBD6E /* PBXTargetDependency */,
 			);
 			name = Sensorsdata;
 			productName = Sensorsdata;
@@ -709,7 +882,7 @@
 		4D5CA76F1B43E92D00D7ACB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = SensorsData;
 				TargetAttributes = {
 					4D0EB7BD1B47A88C0019FD21 = {
@@ -764,6 +937,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1AC1A69210AEF62000BBD6E /* SASDKResources.bundle in Resources */,
 				0058E8C41F6E0FAC00AD18F2 /* ic_test.png in Resources */,
 				4D0EB7CC1B47A88C0019FD21 /* Main.storyboard in Resources */,
 				4D0EB7D11B47A88C0019FD21 /* LaunchScreen.xib in Resources */,
@@ -783,6 +957,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1AC1A4D210ACDB9000BBD6E /* SASDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -886,21 +1061,78 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1AC19E9210ACCC2000BBD6E /* SATypeDescription.m in Sources */,
+				A1AC19EA210ACCC2000BBD6E /* SAUITableViewBinding.m in Sources */,
+				A1AC19EB210ACCC2000BBD6E /* NSString+HashCode.m in Sources */,
+				A1AC19EC210ACCC2000BBD6E /* UITableView+AutoTrack.m in Sources */,
+				A1AC19ED210ACCC2000BBD6E /* SAWebSocket.m in Sources */,
+				A1AC19EE210ACCC2000BBD6E /* SensorsAnalyticsSDK.m in Sources */,
+				A1AC19EF210ACCC2000BBD6E /* SAHeatMapSnapshotMessage.m in Sources */,
+				A1AC19F0210ACCC2000BBD6E /* UIImage+AutoTrack.m in Sources */,
+				A1AC19F1210ACCC2000BBD6E /* SADesignerDeviceInfoMessage.m in Sources */,
+				A1AC19F2210ACCC2000BBD6E /* NSData+SABase64.m in Sources */,
+				A1AC19F3210ACCC2000BBD6E /* SAObjectSelector.m in Sources */,
+				A1AC19F4210ACCC2000BBD6E /* SensorsAnalyticsExceptionHandler.m in Sources */,
+				A1AC19F5210ACCC2000BBD6E /* UITabBar+AutoTrack.m in Sources */,
+				A1AC19F6210ACCC2000BBD6E /* JSONUtil.m in Sources */,
+				A1AC19F7210ACCC2000BBD6E /* UIViewController+AutoTrack.m in Sources */,
+				A1AC19F8210ACCC2000BBD6E /* SAPropertyDescription.m in Sources */,
+				A1AC19F9210ACCC2000BBD6E /* SAAppExtensionDataManager.m in Sources */,
+				A1AC19FA210ACCC2000BBD6E /* SASwizzler.m in Sources */,
+				A1AC19FB210ACCC2000BBD6E /* SADesignerSnapshotMessage.m in Sources */,
+				A1AC19FC210ACCC2000BBD6E /* SAEnumDescription.m in Sources */,
+				A1AC19FD210ACCC2000BBD6E /* SAValueTransformers.m in Sources */,
+				A1AC19FE210ACCC2000BBD6E /* UIActionSheet+AutoTrack.m in Sources */,
+				A1AC19FF210ACCC2000BBD6E /* UIApplication+AutoTrack.m in Sources */,
+				A1AC1A00210ACCC2000BBD6E /* SAEventBinding.m in Sources */,
+				A1AC1A01210ACCC2000BBD6E /* MessageQueueBySqlite.m in Sources */,
+				A1AC1A02210ACCC2000BBD6E /* SAServerUrl.m in Sources */,
+				A1AC1A03210ACCC2000BBD6E /* SAObjectIdentityProvider.m in Sources */,
+				A1AC1A04210ACCC2000BBD6E /* NSInvocation+SAHelpers.m in Sources */,
+				A1AC1A05210ACCC2000BBD6E /* UIView+SAHelpers.m in Sources */,
+				A1AC1A06210ACCC2000BBD6E /* UICollectionView+AutoTrack.m in Sources */,
+				A1AC1A07210ACCC2000BBD6E /* SADesignerDisconnectMessage.m in Sources */,
+				A1AC1A08210ACCC2000BBD6E /* UIAlertView+AutoTrack.m in Sources */,
+				A1AC1A09210ACCC2000BBD6E /* SASwizzle.m in Sources */,
+				A1AC1A0A210ACCC2000BBD6E /* SAApplicationStateSerializer.m in Sources */,
+				A1AC1A0B210ACCC2000BBD6E /* SADesignerConnection.m in Sources */,
+				A1AC1A0C210ACCC2000BBD6E /* SAAbstractDesignerMessage.m in Sources */,
+				A1AC1A0D210ACCC2000BBD6E /* SAClassDescription.m in Sources */,
+				A1AC1A0E210ACCC2000BBD6E /* SAObjectSerializerContext.m in Sources */,
+				A1AC1A0F210ACCC2000BBD6E /* AutoTrackUtils.m in Sources */,
+				A1AC1A10210ACCC2000BBD6E /* SAObjectSerializer.m in Sources */,
+				A1AC1A11210ACCC2000BBD6E /* SADesignerEventBindingMesssage.m in Sources */,
+				A1AC1A12210ACCC2000BBD6E /* SAReachability.m in Sources */,
+				A1AC1A13210ACCC2000BBD6E /* SAGzipUtility.m in Sources */,
+				A1AC1A14210ACCC2000BBD6E /* SAObjectSerializerConfig.m in Sources */,
+				A1AC1A15210ACCC2000BBD6E /* SAUIControlBinding.m in Sources */,
+				A1AC1A16210ACCC2000BBD6E /* SAAbstractHeatMapMessage.m in Sources */,
+				A1AC1A17210ACCC2000BBD6E /* SAHeapMapConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A1AC1A4C210ACD55000BBD6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1E231981FA327CC009857A6 /* SASDKResources */;
+			targetProxy = A1AC1A4B210ACD55000BBD6E /* PBXContainerItemProxy */;
+		};
+		A1AC1A62210AED18000BBD6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1E231981FA327CC009857A6 /* SASDKResources */;
+			targetProxy = A1AC1A61210AED18000BBD6E /* PBXContainerItemProxy */;
+		};
+		A1AC1A67210AED90000BBD6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D5CA7761B43E92D00D7ACB7 /* SensorsAnalyticsSDK */;
+			targetProxy = A1AC1A66210AED90000BBD6E /* PBXContainerItemProxy */;
+		};
 		A1CE09AD1F9E16B800344A90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A1E9C8C21F9D9AE40029DDC5 /* Sensorsdata */;
 			targetProxy = A1CE09AC1F9E16B800344A90 /* PBXContainerItemProxy */;
-		};
-		A1E9C8C91F9D9AE40029DDC5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A1E9C8C21F9D9AE40029DDC5 /* Sensorsdata */;
-			targetProxy = A1E9C8C81F9D9AE40029DDC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -932,14 +1164,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sensors Data Co., Ltd";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VBGTEN3BX8;
+				FRAMEWORK_SEARCH_PATHS = "${BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"SENSORS_ANALYTICS_IDFA=1",
 					"$(inherited)",
 					"SENSORS_ANALYTICS_ENABLE_LOG=1",
 				);
+				HEADER_SEARCH_PATHS = "${BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/SensorsAnalyticsSDK";
 				INFOPLIST_FILE = HelloSensorsAnalytics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "${BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.sensorsdataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "84ce0861-0020-4233-9399-0e11f925b815";
@@ -956,13 +1191,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sensors Data Co., Ltd";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VBGTEN3BX8;
+				FRAMEWORK_SEARCH_PATHS = "${BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SENSORS_ANALYTICS_IDFA=1",
 				);
+				HEADER_SEARCH_PATHS = "${BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include/SensorsAnalyticsSDK";
 				INFOPLIST_FILE = HelloSensorsAnalytics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "${BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.sensorsdataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "84ce0861-0020-4233-9399-0e11f925b815";
@@ -979,13 +1217,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1007,7 +1255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1022,13 +1270,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1044,7 +1302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1054,7 +1312,7 @@
 		4D5CA78C1B43E92D00D7ACB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1069,7 +1327,7 @@
 		4D5CA78D1B43E92D00D7ACB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1116,7 +1374,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = VBGTEN3BX8;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1125,7 +1383,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sensorsdata.SASDKResources;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -1149,7 +1407,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				DEVELOPMENT_TEAM = VBGTEN3BX8;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SASDKResources/Info.plist;
@@ -1157,7 +1415,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sensorsdata.SASDKResources;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -1192,7 +1450,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Sensorsdata/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.sensorsdataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1231,7 +1489,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Sensorsdata/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.sensorsdataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

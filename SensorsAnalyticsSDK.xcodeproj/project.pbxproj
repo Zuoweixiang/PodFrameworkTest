@@ -235,27 +235,17 @@
 		A1AC1A4D210ACDB9000BBD6E /* SASDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1E231991FA327CC009857A6 /* SASDKResources.bundle */; };
 		A1AC1A63210AED42000BBD6E /* SensorsAnalyticsSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A12ACB642041042F00FC9766 /* SensorsAnalyticsSDK.h */; };
 		A1AC1A64210AED4A000BBD6E /* SAAppExtensionDataManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A12ACB852041042F00FC9766 /* SAAppExtensionDataManager.h */; };
-		A1AC1A65210AED54000BBD6E /* SASDKResources.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1E231991FA327CC009857A6 /* SASDKResources.bundle */; };
 		A1AC1A68210AED97000BBD6E /* libSensorsAnalyticsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5CA7771B43E92D00D7ACB7 /* libSensorsAnalyticsSDK.a */; };
 		A1AC1A69210AEF62000BBD6E /* SASDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1E231991FA327CC009857A6 /* SASDKResources.bundle */; };
+		A1DE9A01210EA5C9009CCD6C /* snapshot_request_ios.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DE99FF210EA5C8009CCD6C /* snapshot_request_ios.json */; };
+		A1DE9A02210EA5C9009CCD6C /* snapshot_payload.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DE9A00210EA5C9009CCD6C /* snapshot_payload.json */; };
 		A1E9C8CB1F9D9AE40029DDC5 /* Sensorsdata.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1E9C8C31F9D9AE40029DDC5 /* Sensorsdata.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A1E9C92A1F9D9E5C0029DDC5 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3746EE11C32E819008A50A3 /* libicucore.tbd */; };
 		A36649201CC784A1008D991E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A366491F1CC784A1008D991E /* SafariServices.framework */; };
-		A3746D8F1C2FF34D008A50A3 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3746D8E1C2FF34D008A50A3 /* libz.1.2.5.tbd */; };
-		A3746D911C2FF355008A50A3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3746D901C2FF355008A50A3 /* libsqlite3.tbd */; };
-		A3746EE31C32E822008A50A3 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3746EE11C32E819008A50A3 /* libicucore.tbd */; };
 		A3EEDCE91C4E084200D1362F /* DemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EEDCE81C4E084200D1362F /* DemoController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A1AC1A4B210ACD55000BBD6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4D5CA76F1B43E92D00D7ACB7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A1E231981FA327CC009857A6;
-			remoteInfo = SASDKResources;
-		};
-		A1AC1A61210AED18000BBD6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4D5CA76F1B43E92D00D7ACB7 /* Project object */;
 			proxyType = 1;
@@ -285,7 +275,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				A1AC1A65210AED54000BBD6E /* SASDKResources.bundle in CopyFiles */,
 				A1AC1A64210AED4A000BBD6E /* SAAppExtensionDataManager.h in CopyFiles */,
 				A1AC1A63210AED42000BBD6E /* SensorsAnalyticsSDK.h in CopyFiles */,
 			);
@@ -431,14 +420,13 @@
 		A12ACB942041042F00FC9766 /* SALogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALogger.h; sourceTree = "<group>"; };
 		A12ACB952041042F00FC9766 /* SAValueTransformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAValueTransformers.h; sourceTree = "<group>"; };
 		A12ACB962041042F00FC9766 /* UIActionSheet+AutoTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+AutoTrack.h"; sourceTree = "<group>"; };
+		A1DE99FF210EA5C8009CCD6C /* snapshot_request_ios.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snapshot_request_ios.json; sourceTree = "<group>"; };
+		A1DE9A00210EA5C9009CCD6C /* snapshot_payload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snapshot_payload.json; sourceTree = "<group>"; };
 		A1E231991FA327CC009857A6 /* SASDKResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SASDKResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E2319B1FA327CC009857A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1E9C8C31F9D9AE40029DDC5 /* Sensorsdata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sensorsdata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E9C8C61F9D9AE40029DDC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A366491F1CC784A1008D991E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		A3746D8E1C2FF34D008A50A3 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
-		A3746D901C2FF355008A50A3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		A3746EE11C32E819008A50A3 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		A3EEDCE71C4E081F00D1362F /* DemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoController.h; sourceTree = "<group>"; };
 		A3EEDCE81C4E084200D1362F /* DemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -451,9 +439,6 @@
 				A1AC1A68210AED97000BBD6E /* libSensorsAnalyticsSDK.a in Frameworks */,
 				00DC9CD71D7E9CFA00C7DF6C /* WebKit.framework in Frameworks */,
 				A36649201CC784A1008D991E /* SafariServices.framework in Frameworks */,
-				A3746EE31C32E822008A50A3 /* libicucore.tbd in Frameworks */,
-				A3746D911C2FF355008A50A3 /* libsqlite3.tbd in Frameworks */,
-				A3746D8F1C2FF34D008A50A3 /* libz.1.2.5.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +460,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1E9C92A1F9D9E5C0029DDC5 /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,9 +508,6 @@
 			isa = PBXGroup;
 			children = (
 				A12ACB322041042F00FC9766 /* SensorsAnalyticsSDK */,
-				A3746EE11C32E819008A50A3 /* libicucore.tbd */,
-				A3746D901C2FF355008A50A3 /* libsqlite3.tbd */,
-				A3746D8E1C2FF34D008A50A3 /* libz.1.2.5.tbd */,
 				4D0EB7BF1B47A88C0019FD21 /* HelloSensorsAnalytics */,
 				A1E9C8C41F9D9AE40029DDC5 /* Sensorsdata */,
 				A1E2319A1FA327CC009857A6 /* SASDKResources */,
@@ -656,6 +637,8 @@
 		A1E2319A1FA327CC009857A6 /* SASDKResources */ = {
 			isa = PBXGroup;
 			children = (
+				A1DE9A00210EA5C9009CCD6C /* snapshot_payload.json */,
+				A1DE99FF210EA5C8009CCD6C /* snapshot_request_ios.json */,
 				A1E2319B1FA327CC009857A6 /* Info.plist */,
 			);
 			path = SASDKResources;
@@ -833,7 +816,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A1AC1A62210AED18000BBD6E /* PBXTargetDependency */,
 			);
 			name = SensorsAnalyticsSDK;
 			productName = SensorsAnalyticsSDK;
@@ -950,6 +932,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DE9A02210EA5C9009CCD6C /* snapshot_payload.json in Resources */,
+				A1DE9A01210EA5C9009CCD6C /* snapshot_request_ios.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,11 +1102,6 @@
 			isa = PBXTargetDependency;
 			target = A1E231981FA327CC009857A6 /* SASDKResources */;
 			targetProxy = A1AC1A4B210ACD55000BBD6E /* PBXContainerItemProxy */;
-		};
-		A1AC1A62210AED18000BBD6E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A1E231981FA327CC009857A6 /* SASDKResources */;
-			targetProxy = A1AC1A61210AED18000BBD6E /* PBXContainerItemProxy */;
 		};
 		A1AC1A67210AED90000BBD6E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1452,6 +1431,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.sensorsdataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1491,6 +1471,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.sensorsdataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

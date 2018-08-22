@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true 
   #s.resources = ["SensorsAnalyticsSDK/*.json"]
   s.resource_bundles = {
-   'ResBundle' => ['SensorsAnalyticsSDK/*.json']
+   'ResBundle' => ['SASDKResources/*.json']
   }
   s.subspec 'core' do |c|
 	c.source_files  = "SensorsAnalyticsSDK", "SensorsAnalyticsSDK/*.{h,m}"
